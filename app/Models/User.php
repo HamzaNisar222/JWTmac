@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 
@@ -54,6 +55,8 @@ class User extends Authenticatable implements JWTSubject
         'remember_token',
     ];
 
+
+
     /**
      * The attributes that should be cast.
      *
@@ -78,22 +81,51 @@ class User extends Authenticatable implements JWTSubject
         ]);
     }
 
-/**
- * Authorize user and return the user instance or null.
- *
- * @param array $data
- * @return User|null
- */
-public static function authorizeUser($data)
-{
-    $user = self::where('email', $data['email'])->firstOrFail();
-    // dd($data);
+    /**
+     * Authorize user and return the user instance or null.
+     *
+     * @param array $data
+     * @return User|null
+     */
+    public static function authorizeUser($data)
+    {
+        $user = self::where('email', $data['email'])->firstOrFail();
+        // dd($data);
 
-    if ($user && Hash::check($data['password'], $user->password)) {
-        return $user; // Return the user instance directly, not an array
+        if ($user && Hash::check($data['password'], $user->password)) {
+            return $user; // Return the user instance directly, not an array
 
+        }
+
+        return null; // Return null if authorization fails
     }
 
-    return null; // Return null if authorization fails
-}
+    public function activeTokens()
+    {
+        return $this->hasMany(ActiveToken::class);
+    }
+
+
+    /**
+     * Blacklist the given token.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function blacklistToken($token)
+    {
+        // dd($token);
+        BlacklistedToken::create(['token' => $token]);
+        $this->activeTokens()->where('token', $token)->delete();
+    }
+
+
+
+
+    public function createToken()
+    {
+        $token = JWTAuth::fromUser($this);
+        $this->activeTokens()->create(['token' => $token]);
+        return $token;
+    }
 }

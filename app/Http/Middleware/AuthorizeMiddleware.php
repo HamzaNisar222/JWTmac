@@ -20,6 +20,7 @@ class AuthorizeMiddleware
     {
 
         $Authorizeduser = User::authorizeUser($request->only('email', 'password'));
+        // dd($Authorizeduser);
         $request->merge([ 'user' => $Authorizeduser]);
         return $next($request);
 

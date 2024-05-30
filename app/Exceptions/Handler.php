@@ -2,9 +2,8 @@
 
 namespace App\Exceptions;
 
-use Throwable;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -38,30 +37,5 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
-    }
-
-
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Throwable  $exception
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Throwable $exception)
-    {
-        if ($exception instanceof \Illuminate\Auth\AuthenticationException) {
-            return Response::error('Unauthenticated', 401);
-        }
-
-        if ($exception instanceof \Illuminate\Validation\ValidationException) {
-            return Response::error($exception->getMessage(), 422, $exception->errors());
-        }
-
-        if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
-            return Response::notFound('Route not found', 404);
-        }
-
-        return Response::serverError($exception->getMessage());
     }
 }

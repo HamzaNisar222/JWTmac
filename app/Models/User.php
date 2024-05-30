@@ -87,8 +87,9 @@ class User extends Authenticatable implements JWTSubject
 public static function authorizeUser($data)
 {
     $user = self::where('email', $data['email'])->firstOrFail();
+    // dd($data);
 
-    if ($user || Hash::check($data['password'], $user->password)) {
+    if ($user && Hash::check($data['password'], $user->password)) {
         return $user; // Return the user instance directly, not an array
 
     }

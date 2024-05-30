@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Response;
 
 class AuthController extends Controller
 {
@@ -13,23 +14,14 @@ class AuthController extends Controller
 
         $user=User::createUser($request->all());
 
-        return response()->json([
-            'status' => 'success',
-            'message' => 'User registered successfully',
-            'user' => $user,
-
-        ], 201);
+        return Response::success($user,"provider User registration successful",201);
     }
 
     public function login(Request $request)
     {
         $user = $request->user;
         if (!$user) {
-            return response()->json([
-                'status' => 'error',
-                'error' => 'Invalid credentials',
-                'code' => 401,
-            ], 401);
+          return Response::error("Invalid Credentials",404);
         }
 
         $token = JWTAuth::fromUser($user);
@@ -37,7 +29,7 @@ class AuthController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => JWTAuth::factory()->getTTL() * 60,
-            'user' => $user,
+
         ]);
     }
 

@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\BookController;
 use App\Http\Middleware\ValidationMiddleware;
 
 
@@ -31,5 +32,14 @@ Route::group(['middleware' => 'api'], function () {
 
     Route::get('/user', [AuthController::class, 'user']);
 });
+
+Route::group(['middleware' => ['api', 'blacklist']], function () {
+    Route::get('/books', [BookController::class, 'index'])->name('books.index');
+    Route::post('/create/books', [BookController::class, 'store'])->middleware('Validation:book')->name('books.store');
+    Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show');
+    Route::put('/books/{book}', [BookController::class, 'update'])->middleware('Validation:book')->name('books.update');
+    Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
+});
+
 
 

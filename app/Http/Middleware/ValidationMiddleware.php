@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\BookRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 
@@ -26,7 +27,10 @@ class ValidationMiddleware
         if ($key === 'login') {
 
             app(LoginRequest::class);
-        
+
+        }
+        if($key=='book'){
+             app(BookRequest::class);
         }
 
 

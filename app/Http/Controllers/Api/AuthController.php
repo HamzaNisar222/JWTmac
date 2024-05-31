@@ -2,14 +2,15 @@
 namespace App\Http\Controllers\Api;
 
 
-use App\Jobs\SendUserConfirmation;
 use App\Models\User;
-use App\Jobs\SendUserConfirmationEmail;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
+use App\Jobs\SendUserConfirmation;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Jobs\SendUserConfirmationEmail;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Response;
 
 
 class AuthController extends Controller
@@ -26,6 +27,7 @@ class AuthController extends Controller
         $confirmationUrl = route('confirm.email', ['token' => $token]);
 
         SendUserConfirmationEmail::dispatch($user, $confirmationUrl);
+        Artisan::call('queue:work --stop-when-empty');
 
         return Response::success($user, "User registration successful. Please check your email for confirmation.", 201);
     }

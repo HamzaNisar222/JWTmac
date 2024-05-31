@@ -65,16 +65,18 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $user = $request->user;
+        $remember = $request->remember_me;
         if (!$user) {
-          return Response::error("Invalid Credentials",404);
+            return Response::error("Invalid Credentials", 404);
         }
 
-        $token = $user->createToken();
+        $token = $user->createToken($remember);
+        $expiresIn = $remember ? 30 * 24 * 60 * 60 : JWTAuth::factory()->getTTL() * 60;
+
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => JWTAuth::factory()->getTTL() * 60,
-
+            'expires_in' => $expiresIn,
         ]);
     }
 

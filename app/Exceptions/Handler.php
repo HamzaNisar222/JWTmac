@@ -2,8 +2,13 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+// use GuzzleHttp\Psr7\Response;
 use Throwable;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Support\Facades\Response;
 
 class Handler extends ExceptionHandler
 {
@@ -37,5 +42,20 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    public function render($request, Throwable $e)
+    {
+
+        if ($e instanceof AuthenticationException) {
+            return Response::error('Unauthenticated', 'You are not authenticated', 401);
+        }
+
+        if ($e instanceof NotFoundHttpException) {
+            return Response::notFound("Not Found");
+        }
+
+        // For all other exceptions, use the general error macro
+        return Response::error($e->getMessage(), $e->getCode() ?: 500);
     }
 }

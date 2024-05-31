@@ -122,9 +122,13 @@ class User extends Authenticatable implements JWTSubject
 
 
 
-    public function createToken()
+    public function createToken($remember = false)
     {
-        $token = JWTAuth::fromUser($this);
+        $customClaims = [];
+        if ($remember) {
+            $customClaims['exp'] = now()->addDays(30)->timestamp;
+        }
+        $token = JWTAuth::claims($customClaims)->fromUser($this);
         $this->activeTokens()->create(['token' => $token]);
         return $token;
     }

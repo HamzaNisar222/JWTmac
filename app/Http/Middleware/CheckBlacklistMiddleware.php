@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use Closure;
@@ -11,13 +10,6 @@ use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 
 class CheckBlacklistMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
-     */
     public function handle(Request $request, Closure $next)
     {
         try {
@@ -36,14 +28,9 @@ class CheckBlacklistMiddleware
 
             // Check if the token is expired
             JWTAuth::parseToken()->authenticate();
-
         } catch (TokenExpiredException $e) {
             // Token has expired
-
-            // Retrieve the expired token
             $token = JWTAuth::getToken();
-
-            // Delete the expired token from the active tokens table
             ActiveToken::where('token', $token)->delete();
 
             return response()->json(['error' => 'Token has expired'], 401);

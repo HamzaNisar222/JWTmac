@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'Validation' => \App\Http\Middleware\ValidationMiddleware::class,
         'Authorize' => \App\Http\Middleware\AuthorizeMiddleware::class,
         'blacklist' => \App\Http\Middleware\CheckBlacklistMiddleware::class,
+        
     ];
 }

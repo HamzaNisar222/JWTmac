@@ -27,7 +27,7 @@ Route::group(['middleware' => 'api'], function () {
         ->middleware(['Validation:login','Authorize']) // You can add 'CheckBlacklist' here if you really need it
         ->name('login');
 
-    Route::post('/logout', [AuthController::class, 'logout'])
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('blacklist')
         ->name('logout');
 
     Route::get('/user', [AuthController::class, 'user']);
@@ -40,6 +40,4 @@ Route::group(['middleware' => ['api', 'blacklist']], function () {
     Route::put('/books/{book}', [BookController::class, 'update'])->middleware('Validation:book')->name('books.update');
     Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
 });
-
-
 

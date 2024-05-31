@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\BookResource;
 use App\Models\Book;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\BookResource;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
     // List all books
     public function index()
     {
+        $user=Auth::user();
+        if($user){
         $books = Book::all();
         return BookResource::collection($books);
+        }
     }
 
     // Show a specific book

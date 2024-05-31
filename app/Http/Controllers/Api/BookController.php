@@ -10,14 +10,21 @@ use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
+
+
+    public function __construct()
+    {
+        // Apply middleware to the store and update methods
+        $this->middleware('Validation:book')->only(['store', 'update']);
+    }
+
     // List all books
     public function index()
     {
-        $user=Auth::user();
-        if($user){
-        $books = Book::all();
+    
+       $books = Book::all();
         return BookResource::collection($books);
-        }
+
     }
 
     // Show a specific book

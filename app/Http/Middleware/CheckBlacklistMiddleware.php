@@ -14,6 +14,7 @@ class CheckBlacklistMiddleware
     {
         try {
             // Retrieve the token from the request
+            // dd($request->all());
             $token = JWTAuth::getToken();
 
             // Check if the token is not present

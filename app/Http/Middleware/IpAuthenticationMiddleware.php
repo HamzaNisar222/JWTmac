@@ -3,11 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Facades\JWTAuth;
 
-class AuthorizeMiddleware
+class IpAuthenticationMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,11 +16,18 @@ class AuthorizeMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        // dd($request->all());
+        $allowedIP = '127.0.0.1'; // Replace this with the allowed IP address
 
-        $Authorizeduser = User::authorizeUser($request->only('email', 'password'));
-      
-        $request->merge([ 'user' => $Authorizeduser]);
+        // Get the client's IP address
+        $clientIP = $_SERVER['REMOTE_ADDR'];
+        // dd($clientIP);
+
+        // Check if the client's IP matches the allowed IP
+        if ($clientIP !== $allowedIP) {
+            abort(403, 'Unauthorized access');
+        }
+
         return $next($request);
-
     }
 }

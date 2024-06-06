@@ -66,6 +66,13 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
+
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
+
     /**
      * Create a new user instance.
      *
@@ -94,6 +101,11 @@ class User extends Authenticatable implements JWTSubject
 
         if ($user && $user->status==1 && Hash::check($data['password'], $user->password)) {
             return $user; // Return the user instance directly, not an array
+
+        }
+        if(!Hash::check($data['password'],$user->password)) {
+
+                return response()->json(['error' => 'Unauthorised'], 401);
 
         }
 

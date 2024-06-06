@@ -4,6 +4,7 @@ namespace App\Http;
 
 use Illuminate\Support\Facades\App;
 
+use App\Http\Middleware\IpAuthenticationMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -68,6 +69,9 @@ class Kernel extends HttpKernel
         'Validation' => \App\Http\Middleware\ValidationMiddleware::class,
         'Authorize' => \App\Http\Middleware\AuthorizeMiddleware::class,
         'blacklist' => \App\Http\Middleware\CheckBlacklistMiddleware::class,
-        
+        'verifyip'=> \App\Http\Middleware\IpAuthenticationMiddleware::class,
+        'Log' => \App\Http\Middleware\LogActionsMiddleware::class,
+        'CustomThrottle' => \App\Http\Middleware\ThrottleMiddleware::class,
+
     ];
 }

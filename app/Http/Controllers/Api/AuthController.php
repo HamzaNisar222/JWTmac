@@ -3,9 +3,11 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Jobs\SendUserConfirmation;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Jobs\SendUserConfirmationEmail;
@@ -18,47 +20,46 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $user = User::createUser($request->all());
-        $expirationTime = now()->addMinutes(5);
-        $tokenData = [
-            'email' => $user->email,
-            'expiration' => $expirationTime->timestamp,
-        ];
-        $token = base64_encode(json_encode($tokenData));
-        $confirmationUrl = route('confirm.email', ['token' => $token]);
+        $token = Str::random(32);
+
+        // Store the token in the database
+        $user->email_confirmation_token = $token;
+        $user->save();
+        // Generate signed URL
+        $confirmationUrl = URL::temporarySignedRoute(
+            'confirm.email',
+            now()->addMinutes(5),
+            ['token' => $token]
+        );
 
         SendUserConfirmationEmail::dispatch($user, $confirmationUrl);
-        Artisan::call('queue:work --stop-when-empty');
 
         return Response::success($user, "User registration successful. Please check your email for confirmation.", 201);
     }
 
-    public function confirmEmail($token)
+    public function confirmEmail(Request $request)
     {
-        // Decode the token
-        $decodedToken = json_decode(base64_decode($token), true);
+     // Check if the signed URL is valid
+     if (! $request->hasValidSignature()) {
+        return Response::error("Invalid or expired email confirmation link.", 400);
+    }
 
-        if (!$decodedToken || !isset($decodedToken['email'], $decodedToken['expiration'])) {
-            return response()->json(['message' => 'Invalid confirmation link.'], 404);
-        }
+    $token = $request->token;
 
-        // Validate expiration time
-        $expirationTime = $decodedToken['expiration'];
-        if (now()->timestamp > $expirationTime) {
-            return response()->json(['message' => 'Confirmation link has expired.'], 400);
-        }
+    // Find the user by the token
+    $user = User::where('email_confirmation_token', $token)->first();
 
-        // Proceed with email confirmation
-        $email = $decodedToken['email'];
-        $user = User::where('email', $email)->first();
+    if (! $user) {
+        return Response::error("Invalid email confirmation token.", 400);
+    }
 
-        if (!$user) {
-            return response()->json(['message' => 'User not found.'], 404);
-        }
+    // Confirm the user's email
+    $user->email_verified_at = now();
+    $user->email_confirmation_token = null;
+    $user->status=1; // Clear the token
+    $user->save();
 
-        $user->status = 1;
-        $user->save();
-
-        return response()->json(['message' => 'Email confirmed successfully.'], 200);
+    return Response::success(null, "Email confirmed successfully.", 200);
     }
 
 
@@ -69,8 +70,7 @@ class AuthController extends Controller
         if (!$user) {
             return Response::error("Invalid Credentials", 404);
         }
-
-        $token = $user->createToken($remember);
+        $token=$user->createToken($remember);
         $expiresIn = $remember ? 30 * 24 * 60 * 60 : JWTAuth::factory()->getTTL() * 60;
 
         return response()->json([
@@ -80,14 +80,6 @@ class AuthController extends Controller
         ]);
     }
 
-    public function user(){
-        $user = Auth::user();
-        if (!$user) {
-            return response()->json(['status' => 'error', 'message' => 'User not authenticated'], 401);
-        }
-
-        return response()->json(['status' => 'success', 'user' => $user], 200);
-    }
     public function logout(Request $request)
     {
         try {

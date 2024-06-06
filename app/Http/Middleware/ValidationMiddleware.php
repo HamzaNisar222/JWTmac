@@ -21,6 +21,7 @@ class ValidationMiddleware
     public function handle(Request $request, Closure $next, $key = null)
     {
 
+
         if ($key === 'register') {
             app(RegisterRequest::class);
         }
@@ -30,6 +31,7 @@ class ValidationMiddleware
 
         }
         if($key=='book'){
+            //  dd($request->all());
              app(BookRequest::class);
         }
 

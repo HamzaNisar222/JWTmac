@@ -1,0 +1,854 @@
+[2024-06-05 13:30:47] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php7552.tmp"}}} 
+[2024-06-05 13:30:47] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":7,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-05T13:30:47.000000Z\",\"updated_at\":\"2024-06-05T13:30:47.000000Z\"}}"} 
+[2024-06-05 13:33:20] local.INFO: Request: {"method":"DELETE","url":"http://localhost:8000/api/books/1","parameters":[]} 
+[2024-06-05 13:33:21] local.INFO: Response: {"status_code":200,"content":"{\"message\":\"Book deleted successfully\"}"} 
+[2024-06-05 13:33:29] local.INFO: Request: {"method":"DELETE","url":"http://localhost:8000/api/books/1","parameters":[]} 
+[2024-06-05 13:33:29] local.INFO: Response: {"status_code":404,"content":"{\"status\":\"error\",\"message\":\"Record Not Found\"}"} 
+[2024-06-05 13:33:41] local.INFO: Request: {"method":"DELETE","url":"http://localhost:8000/api/books/8","parameters":[]} 
+[2024-06-05 13:33:41] local.INFO: Response: {"status_code":404,"content":"{\"status\":\"error\",\"message\":\"Record Not Found\"}"} 
+[2024-06-05 13:33:47] local.INFO: Request: {"method":"DELETE","url":"http://localhost:8000/api/books/5","parameters":[]} 
+[2024-06-05 13:33:47] local.INFO: Response: {"status_code":200,"content":"{\"message\":\"Book deleted successfully\"}"} 
+[2024-06-05 13:34:57] local.INFO: Request: {"method":"DELETE","url":"http://localhost:8000/api/books/10","parameters":[]} 
+[2024-06-05 13:34:57] local.INFO: Response: {"status_code":404,"content":"{\"status\":\"error\",\"message\":\"Record Not Found\"}"} 
+[2024-06-05 15:19:12] local.INFO: Request: {"method":"PUT","url":"http://localhost:8000/api/books/update/1","parameters":[]} 
+[2024-06-05 15:19:12] local.INFO: Response: {"status_code":500,"content":"{
+    \"message\": \"Method App\\\\Http\\\\Controllers\\\\Api\\\\AuthController::update does not exist.\",
+    \"exception\": \"BadMethodCallException\",
+    \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Controller.php\",
+    \"line\": 68,
+    \"trace\": [
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Controller.php\",
+            \"line\": 54,
+            \"function\": \"__call\",
+            \"class\": \"Illuminate\\\\Routing\\\\Controller\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",
+            \"line\": 43,
+            \"function\": \"callAction\",
+            \"class\": \"Illuminate\\\\Routing\\\\Controller\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",
+            \"line\": 259,
+            \"function\": \"dispatch\",
+            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",
+            \"line\": 205,
+            \"function\": \"runController\",
+            \"class\": \"Illuminate\\\\Routing\\\\Route\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 798,
+            \"function\": \"run\",
+            \"class\": \"Illuminate\\\\Routing\\\\Route\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 141,
+            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\app\\\\Http\\\\Middleware\\\\LogActionsMiddleware.php\",
+            \"line\": 27,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"App\\\\Http\\\\Middleware\\\\LogActionsMiddleware\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\app\\\\Http\\\\Middleware\\\\IpAuthenticationMiddleware.php\",
+            \"line\": 30,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"App\\\\Http\\\\Middleware\\\\IpAuthenticationMiddleware\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\app\\\\Http\\\\Middleware\\\\CheckBlacklistMiddleware.php\",
+            \"line\": 39,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"App\\\\Http\\\\Middleware\\\\CheckBlacklistMiddleware\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",
+            \"line\": 50,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",
+            \"line\": 126,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",
+            \"line\": 92,
+            \"function\": \"handleRequest\",
+            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",
+            \"line\": 54,
+            \"function\": \"handleRequestUsingNamedLimiter\",
+            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 116,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 797,
+            \"function\": \"then\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 776,
+            \"function\": \"runRouteWithinStack\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 740,
+            \"function\": \"runRoute\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 729,
+            \"function\": \"dispatchToRoute\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",
+            \"line\": 190,
+            \"function\": \"dispatch\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 141,
+            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",
+            \"line\": 21,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",
+            \"line\": 31,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",
+            \"line\": 21,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",
+            \"line\": 40,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",
+            \"line\": 27,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",
+            \"line\": 86,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\fruitcake\\\\laravel-cors\\\\src\\\\HandleCors.php\",
+            \"line\": 52,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",
+            \"line\": 39,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 116,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",
+            \"line\": 165,
+            \"function\": \"then\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",
+            \"line\": 134,
+            \"function\": \"sendRequestThroughRouter\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\public\\\\index.php\",
+            \"line\": 51,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\resources\\\\server.php\",
+            \"line\": 16,
+            \"function\": \"require_once\"
+        }
+    ]
+}"} 
+[2024-06-05 15:19:31] local.INFO: Request: {"method":"PUT","url":"http://localhost:8000/api/books/update/1","parameters":[]} 
+[2024-06-05 15:19:31] local.INFO: Response: {"status_code":422,"content":"{\"message\":\"The title field is required. (and 1 more error)\",\"errors\":{\"title\":[\"The title field is required.\"],\"author\":[\"The author field is required.\"]}}"} 
+[2024-06-06 04:02:45] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php26C7.tmp"}}} 
+[2024-06-06 04:02:46] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":8,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:02:45.000000Z\",\"updated_at\":\"2024-06-06T04:02:45.000000Z\"}}"} 
+[2024-06-06 04:24:47] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php5123.tmp"}}} 
+[2024-06-06 04:24:47] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":9,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:24:47.000000Z\",\"updated_at\":\"2024-06-06T04:24:47.000000Z\"}}"} 
+[2024-06-06 04:24:52] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php5CFB.tmp"}}} 
+[2024-06-06 04:24:54] local.INFO: Response: {"status_code":500,"content":"{
+    \"message\": \"SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it (SQL: select * from `users` where `id` = 1 limit 1)\",
+    \"exception\": \"Illuminate\\\\Database\\\\QueryException\",
+    \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",
+    \"line\": 760,
+    \"trace\": [
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",
+            \"line\": 899,
+            \"function\": \"runQueryCallback\",
+            \"class\": \"Illuminate\\\\Database\\\\Connection\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",
+            \"line\": 878,
+            \"function\": \"tryAgainIfCausedByLostConnection\",
+            \"class\": \"Illuminate\\\\Database\\\\Connection\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",
+            \"line\": 722,
+            \"function\": \"handleQueryException\",
+            \"class\": \"Illuminate\\\\Database\\\\Connection\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",
+            \"line\": 405,
+            \"function\": \"run\",
+            \"class\": \"Illuminate\\\\Database\\\\Connection\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",
+            \"line\": 2705,
+            \"function\": \"select\",
+            \"class\": \"Illuminate\\\\Database\\\\Connection\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",
+            \"line\": 2694,
+            \"function\": \"runSelect\",
+            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",
+            \"line\": 3230,
+            \"function\": \"Illuminate\\\\Database\\\\Query\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",
+            \"line\": 2693,
+            \"function\": \"onceWithColumns\",
+            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",
+            \"line\": 710,
+            \"function\": \"get\",
+            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",
+            \"line\": 694,
+            \"function\": \"getModels\",
+            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Concerns\\\\BuildsQueries.php\",
+            \"line\": 296,
+            \"function\": \"get\",
+            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Auth\\\\EloquentUserProvider.php\",
+            \"line\": 59,
+            \"function\": \"first\",
+            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\tymon\\\\jwt-auth\\\\src\\\\JWTGuard.php\",
+            \"line\": 219,
+            \"function\": \"retrieveById\",
+            \"class\": \"Illuminate\\\\Auth\\\\EloquentUserProvider\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\tymon\\\\jwt-auth\\\\src\\\\Providers\\\\Auth\\\\Illuminate.php\",
+            \"line\": 56,
+            \"function\": \"onceUsingId\",
+            \"class\": \"Tymon\\\\JWTAuth\\\\JWTGuard\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\tymon\\\\jwt-auth\\\\src\\\\JWTAuth.php\",
+            \"line\": 65,
+            \"function\": \"byId\",
+            \"class\": \"Tymon\\\\JWTAuth\\\\Providers\\\\Auth\\\\Illuminate\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\app\\\\Http\\\\Controllers\\\\Api\\\\BookController.php\",
+            \"line\": 42,
+            \"function\": \"authenticate\",
+            \"class\": \"Tymon\\\\JWTAuth\\\\JWTAuth\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Controller.php\",
+            \"line\": 54,
+            \"function\": \"store\",
+            \"class\": \"App\\\\Http\\\\Controllers\\\\Api\\\\BookController\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",
+            \"line\": 43,
+            \"function\": \"callAction\",
+            \"class\": \"Illuminate\\\\Routing\\\\Controller\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",
+            \"line\": 259,
+            \"function\": \"dispatch\",
+            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",
+            \"line\": 205,
+            \"function\": \"runController\",
+            \"class\": \"Illuminate\\\\Routing\\\\Route\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 798,
+            \"function\": \"run\",
+            \"class\": \"Illuminate\\\\Routing\\\\Route\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 141,
+            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\app\\\\Http\\\\Middleware\\\\ValidationMiddleware.php\",
+            \"line\": 40,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"App\\\\Http\\\\Middleware\\\\ValidationMiddleware\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\app\\\\Http\\\\Middleware\\\\ThrottleMiddleware.php\",
+            \"line\": 26,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"App\\\\Http\\\\Middleware\\\\ThrottleMiddleware\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\app\\\\Http\\\\Middleware\\\\LogActionsMiddleware.php\",
+            \"line\": 27,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"App\\\\Http\\\\Middleware\\\\LogActionsMiddleware\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\app\\\\Http\\\\Middleware\\\\IpAuthenticationMiddleware.php\",
+            \"line\": 30,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"App\\\\Http\\\\Middleware\\\\IpAuthenticationMiddleware\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\app\\\\Http\\\\Middleware\\\\CheckBlacklistMiddleware.php\",
+            \"line\": 39,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"App\\\\Http\\\\Middleware\\\\CheckBlacklistMiddleware\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",
+            \"line\": 50,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",
+            \"line\": 126,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",
+            \"line\": 92,
+            \"function\": \"handleRequest\",
+            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",
+            \"line\": 54,
+            \"function\": \"handleRequestUsingNamedLimiter\",
+            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Auth\\\\Middleware\\\\Authenticate.php\",
+            \"line\": 44,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 116,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 797,
+            \"function\": \"then\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 776,
+            \"function\": \"runRouteWithinStack\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 740,
+            \"function\": \"runRoute\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",
+            \"line\": 729,
+            \"function\": \"dispatchToRoute\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",
+            \"line\": 190,
+            \"function\": \"dispatch\",
+            \"class\": \"Illuminate\\\\Routing\\\\Router\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 141,
+            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",
+            \"line\": 21,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",
+            \"line\": 31,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",
+            \"line\": 21,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",
+            \"line\": 40,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",
+            \"line\": 27,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",
+            \"line\": 86,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\fruitcake\\\\laravel-cors\\\\src\\\\HandleCors.php\",
+            \"line\": 52,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",
+            \"line\": 39,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 180,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",
+            \"line\": 116,
+            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",
+            \"line\": 165,
+            \"function\": \"then\",
+            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",
+            \"line\": 134,
+            \"function\": \"sendRequestThroughRouter\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\public\\\\index.php\",
+            \"line\": 51,
+            \"function\": \"handle\",
+            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",
+            \"type\": \"->\"
+        },
+        {
+            \"file\": \"D:\\\\Mydata\\\\PF\\\\Laravel\\\\JwtAuth\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\resources\\\\server.php\",
+            \"line\": 16,
+            \"function\": \"require_once\"
+        }
+    ]
+}"} 
+[2024-06-06 04:25:34] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpA34.tmp"}}} 
+[2024-06-06 04:25:34] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":10,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:25:34.000000Z\",\"updated_at\":\"2024-06-06T04:25:34.000000Z\"}}"} 
+[2024-06-06 04:25:37] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php16B8.tmp"}}} 
+[2024-06-06 04:25:37] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":11,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:25:37.000000Z\",\"updated_at\":\"2024-06-06T04:25:37.000000Z\"}}"} 
+[2024-06-06 04:25:39] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php1F83.tmp"}}} 
+[2024-06-06 04:25:39] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":12,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:25:39.000000Z\",\"updated_at\":\"2024-06-06T04:25:39.000000Z\"}}"} 
+[2024-06-06 04:25:43] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php2C26.tmp"}}} 
+[2024-06-06 04:25:43] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":13,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:25:43.000000Z\",\"updated_at\":\"2024-06-06T04:25:43.000000Z\"}}"} 
+[2024-06-06 04:25:45] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php354F.tmp"}}} 
+[2024-06-06 04:25:45] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":14,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:25:45.000000Z\",\"updated_at\":\"2024-06-06T04:25:45.000000Z\"}}"} 
+[2024-06-06 04:27:09] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php7F06.tmp"}}} 
+[2024-06-06 04:27:09] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":15,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:27:09.000000Z\",\"updated_at\":\"2024-06-06T04:27:09.000000Z\"}}"} 
+[2024-06-06 04:27:11] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php8418.tmp"}}} 
+[2024-06-06 04:27:11] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":16,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:27:11.000000Z\",\"updated_at\":\"2024-06-06T04:27:11.000000Z\"}}"} 
+[2024-06-06 04:27:12] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php889D.tmp"}}} 
+[2024-06-06 04:27:12] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":17,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:27:12.000000Z\",\"updated_at\":\"2024-06-06T04:27:12.000000Z\"}}"} 
+[2024-06-06 04:27:14] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php8FB3.tmp"}}} 
+[2024-06-06 04:27:14] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":18,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:27:14.000000Z\",\"updated_at\":\"2024-06-06T04:27:14.000000Z\"}}"} 
+[2024-06-06 04:27:15] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php9590.tmp"}}} 
+[2024-06-06 04:27:15] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":19,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:27:15.000000Z\",\"updated_at\":\"2024-06-06T04:27:15.000000Z\"}}"} 
+[2024-06-06 04:53:39] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpBF9B.tmp"}}} 
+[2024-06-06 04:53:39] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":1,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:53:39.000000Z\",\"updated_at\":\"2024-06-06T04:53:39.000000Z\"}}"} 
+[2024-06-06 04:53:41] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpC653.tmp"}}} 
+[2024-06-06 04:53:41] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":2,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:53:41.000000Z\",\"updated_at\":\"2024-06-06T04:53:41.000000Z\"}}"} 
+[2024-06-06 04:53:42] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpCE14.tmp"}}} 
+[2024-06-06 04:53:43] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":3,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:53:43.000000Z\",\"updated_at\":\"2024-06-06T04:53:43.000000Z\"}}"} 
+[2024-06-06 04:53:44] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpD384.tmp"}}} 
+[2024-06-06 04:53:44] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":4,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:53:44.000000Z\",\"updated_at\":\"2024-06-06T04:53:44.000000Z\"}}"} 
+[2024-06-06 04:58:23] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php1647.tmp"}}} 
+[2024-06-06 04:58:23] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":5,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:58:23.000000Z\",\"updated_at\":\"2024-06-06T04:58:23.000000Z\"}}"} 
+[2024-06-06 04:58:25] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php1D1E.tmp"}}} 
+[2024-06-06 04:58:25] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":6,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T04:58:25.000000Z\",\"updated_at\":\"2024-06-06T04:58:25.000000Z\"}}"} 
+[2024-06-06 04:58:26] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\php2250.tmp"}}} 
+[2024-06-06 04:58:26] local.INFO: Response: {"status_code":429,"content":"{\"message\":\"Too Many Attempts.\"}"} 
+[2024-06-06 05:00:09] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpB499.tmp"}}} 
+[2024-06-06 05:00:10] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":7,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T05:00:10.000000Z\",\"updated_at\":\"2024-06-06T05:00:10.000000Z\"}}"} 
+[2024-06-06 05:00:13] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpC553.tmp"}}} 
+[2024-06-06 05:00:13] local.INFO: Response: {"status_code":201,"content":"{\"data\":{\"id\":8,\"title\":\"Harry Potter HA\",\"author\":\"Hamza Nisar\",\"description\":\"Fictious\",\"published_date\":\"2023-02-22\",\"created_at\":\"2024-06-06T05:00:13.000000Z\",\"updated_at\":\"2024-06-06T05:00:13.000000Z\"}}"} 
+[2024-06-06 05:00:15] local.INFO: Request: {"method":"POST","url":"http://localhost:8000/api/books","parameters":{"title":"Harry Potter HA","author":"Hamza Nisar","description":"Fictious","published_date":"2023-02-22","image":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpCBBD.tmp"}}} 
+[2024-06-06 05:00:15] local.INFO: Response: {"status_code":429,"content":"{\"message\":\"Too Many Attempts.\"}"} 
+[2024-06-06 05:02:31] local.INFO: Request: {"method":"PUT","url":"http://localhost:8000/api/books/1","parameters":[]} 
+[2024-06-06 05:02:31] local.INFO: Response: {"status_code":422,"content":"{\"message\":\"The title field is required. (and 1 more error)\",\"errors\":{\"title\":[\"The title field is required.\"],\"author\":[\"The author field is required.\"]}}"} 
+[2024-06-06 05:05:35] local.INFO: Request: {"method":"PATCH","url":"http://localhost:8000/api/books/1","parameters":[]} 
+[2024-06-06 05:05:35] local.INFO: Response: {"status_code":422,"content":"{\"message\":\"The title field is required. (and 1 more error)\",\"errors\":{\"title\":[\"The title field is required.\"],\"author\":[\"The author field is required.\"]}}"} 
+[2024-06-06 05:10:49] local.INFO: Request: {"method":"PUT","url":"http://localhost:8000/api/books/1","parameters":[]} 
+[2024-06-06 05:10:49] local.INFO: Response: {"status_code":422,"content":"{\"message\":\"The title field is required. (and 1 more error)\",\"errors\":{\"title\":[\"The title field is required.\"],\"author\":[\"The author field is required.\"]}}"} 
+[2024-06-06 05:11:51] local.INFO: Request: {"method":"PUT","url":"http://localhost:8000/api/books/1","parameters":[]} 
+[2024-06-06 05:11:51] local.INFO: Response: {"status_code":422,"content":"{\"message\":\"The title field is required. (and 1 more error)\",\"errors\":{\"title\":[\"The title field is required.\"],\"author\":[\"The author field is required.\"]}}"} 
+[2024-06-06 05:14:35] local.INFO: Request: {"method":"PUT","url":"http://localhost:8000/api/books/1","parameters":[]} 
+[2024-06-06 05:15:04] local.INFO: Request: {"method":"PUT","url":"http://localhost:8000/api/books/1","parameters":[]} 
+[2024-06-06 05:37:13] local.INFO: Request: {"method":"PUT","url":"http://localhost:8000/api/books/1","parameters":{"bookId":"12345","title":"Learn Programming","author":"John Doe","publishedDate":"2023-01-01","image":{"fileName":"book_cover.jpg","fileType":"image/jpeg","data":"iVBORw0KGgoAAAANSUhEUgAA... (your_base64_encoded_string_here)"}}} 
+[2024-06-06 05:37:13] local.INFO: Response: {"status_code":422,"content":"{\"message\":\"The image must be an image. (and 1 more error)\",\"errors\":{\"image\":[\"The image must be an image.\",\"The image must be a file of type: jpeg, png, jpg, gif.\"]}}"} 

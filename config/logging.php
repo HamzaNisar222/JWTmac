@@ -54,11 +54,18 @@ return [
             'ignore_exceptions' => false,
         ],
 
+        'BookLogs' => [
+            'driver' => 'single',
+            'path' => public_path('logs/BookLogs.log'),
+            'level' => env('LOG_LEVEL', 'info'),
+        ],
+
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
         ],
+
 
         'daily' => [
             'driver' => 'daily',
